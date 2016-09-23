@@ -9,17 +9,44 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var txtNumberEnter: UITextField!
+    @IBOutlet weak var averageNumber: UIButton!
+    @IBOutlet weak var lblAveNum: UILabel!
+    @IBOutlet weak var txtNumberEnter2: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        changeTxtNumberProperties(txtNumEn: txtNumberEnter)
+        changeTxtNumberProperties(txtNumEn: txtNumberEnter2)
+        changeButtonStyle()
+        changelblAveNum()
     }
-
+    func changeTxtNumberProperties(txtNumEn: UITextField){
+        txtNumEn.textAlignment = NSTextAlignment.center
+        txtNumEn.borderStyle = UITextBorderStyle.line
+        txtNumEn.backgroundColor = UIColor.white
+        
+    }
+    func changeButtonStyle(){
+        averageNumber.setTitle("Average", for: UIControlState.normal)
+        averageNumber.setTitleColor(UIColor.orange, for: UIControlState.normal)
+    }
+    func changelblAveNum(){
+        lblAveNum.textColor = UIColor.white
+        lblAveNum.isHidden = true
+    }
+    func getAve(d1: Double, d2: Double)->Double{
+        return (d1+d2)/2
+    }
+    @IBAction func getAveNum(_ sender: AnyObject) {
+        lblAveNum.isHidden = false
+        let d1 = Double(txtNumberEnter.text!)
+        let d2 = Double(txtNumberEnter2.text!)
+        lblAveNum.text = String(getAve(d1: d1!, d2: d2!))
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 
