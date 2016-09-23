@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var averageNumber: UIButton!
     @IBOutlet weak var lblAveNum: UILabel!
     @IBOutlet weak var txtNumberEnter2: UITextField!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         changeTxtNumberProperties(txtNumEn: txtNumberEnter)
@@ -39,10 +39,17 @@ class ViewController: UIViewController {
         return (d1+d2)/2
     }
     @IBAction func getAveNum(_ sender: AnyObject) {
-        lblAveNum.isHidden = false
-        let d1 = Double(txtNumberEnter.text!)
-        let d2 = Double(txtNumberEnter2.text!)
-        lblAveNum.text = String(getAve(d1: d1!, d2: d2!))
+        let numberCharacters = NSCharacterSet.decimalDigits.inverted
+         if txtNumberEnter.text!.isEmpty || txtNumberEnter2.text!.isEmpty {
+                print ("Please enter numbers!!!")
+         }else if txtNumberEnter.text?.rangeOfCharacter(from: numberCharacters) != nil || txtNumberEnter2.text?.rangeOfCharacter(from: numberCharacters) != nil {
+                print ("You cannot enter letters or symbols!!!")
+         }else{
+            let d1 = Double(txtNumberEnter.text!)
+            let d2 = Double(txtNumberEnter2.text!)
+            lblAveNum.text = String(getAve(d1: d1!, d2: d2!))
+            lblAveNum.isHidden = false
+        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
