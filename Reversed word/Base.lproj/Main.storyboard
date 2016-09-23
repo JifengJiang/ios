@@ -40,13 +40,37 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y1C-EE-cAa">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQl-EF-9Fm">
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="btnQuickAveAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LfH-L0-fEQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ve-Qk-x1H">
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="resetQuickAveButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TxM-Vo-HBc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="y1C-EE-cAa" firstAttribute="leading" secondItem="Zxm-ca-AXd" secondAttribute="leading" id="71L-qd-H3S"/>
+                            <constraint firstItem="y1C-EE-cAa" firstAttribute="top" secondItem="f2c-yt-IPf" secondAttribute="bottom" constant="27" id="Dh2-qb-Tut"/>
+                            <constraint firstItem="0ve-Qk-x1H" firstAttribute="top" secondItem="oQl-EF-9Fm" secondAttribute="bottom" constant="25" id="FR9-FQ-eD5"/>
+                            <constraint firstItem="oQl-EF-9Fm" firstAttribute="top" secondItem="y1C-EE-cAa" secondAttribute="bottom" constant="73" id="GP0-VY-gzH"/>
                             <constraint firstItem="9AJ-xp-ef7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="GRc-Vt-9md"/>
                             <constraint firstItem="Zxm-ca-AXd" firstAttribute="top" secondItem="9AJ-xp-ef7" secondAttribute="bottom" constant="31" id="GvU-ef-Orm"/>
                             <constraint firstItem="jQS-fb-HXe" firstAttribute="top" secondItem="Zxm-ca-AXd" secondAttribute="bottom" constant="50" id="Hu5-34-QoE"/>
+                            <constraint firstItem="y1C-EE-cAa" firstAttribute="centerX" secondItem="oQl-EF-9Fm" secondAttribute="centerX" id="Uyb-TT-V1I"/>
+                            <constraint firstItem="y1C-EE-cAa" firstAttribute="trailing" secondItem="Zxm-ca-AXd" secondAttribute="trailing" id="VdR-u5-wmq"/>
                             <constraint firstItem="Zxm-ca-AXd" firstAttribute="centerX" secondItem="jQS-fb-HXe" secondAttribute="centerX" id="XGZ-gd-0ST"/>
+                            <constraint firstItem="0ve-Qk-x1H" firstAttribute="leading" secondItem="oQl-EF-9Fm" secondAttribute="leading" id="bUR-w0-WdH"/>
                             <constraint firstItem="9AJ-xp-ef7" firstAttribute="trailing" secondItem="Zxm-ca-AXd" secondAttribute="trailing" id="eos-Pz-0jp"/>
                             <constraint firstItem="f2c-yt-IPf" firstAttribute="top" secondItem="jQS-fb-HXe" secondAttribute="bottom" constant="27" id="fsh-nh-WhX"/>
                             <constraint firstItem="9AJ-xp-ef7" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="kS4-aU-1ln"/>
@@ -57,9 +81,12 @@
                     </view>
                     <connections>
                         <outlet property="averageNumber" destination="jQS-fb-HXe" id="6ab-fm-rjP"/>
+                        <outlet property="btnQuickAve" destination="oQl-EF-9Fm" id="15a-ay-XCX"/>
                         <outlet property="lblAveNum" destination="f2c-yt-IPf" id="D4q-ZQ-uQV"/>
+                        <outlet property="resetQuickAve" destination="0ve-Qk-x1H" id="MQn-yu-TPu"/>
                         <outlet property="txtNumberEnter" destination="9AJ-xp-ef7" id="ESK-eM-4k9"/>
                         <outlet property="txtNumberEnter2" destination="Zxm-ca-AXd" id="acv-2g-LSY"/>
+                        <outlet property="txtQuickAve" destination="y1C-EE-cAa" id="wrh-db-0EK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
